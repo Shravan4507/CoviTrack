@@ -8,6 +8,7 @@
     "dev": "nodemon --watch src -e ts --exec ts-node src/server.ts",
     "build": "rimraf dist && tsc",
     "start": "node dist/server.js",
+    "setup:db": "ts-node src/scripts/setup-db.ts",
     "db:migrate": "ts-node src/scripts/migrate.ts",
     "seed:admin": "ts-node src/scripts/create-admin.ts",
     "seed:slots": "ts-node src/scripts/seed-slot.ts",

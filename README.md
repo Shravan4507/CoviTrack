@@ -224,10 +224,7 @@ CoviTrack/
 ├── storage/reports/              # Local storage for generated diagnostic report PDFs
 ├── test-results/                 # TestNG reports, screenshots, execution logs
 ├── start.bat                     # Double-click one-click application launcher
-├── run.bat                       # Application launcher script
-├── run.ps1                       # PowerShell multi-service runner & DB auto-setup
 ├── run-demo.bat                  # Double-click visible Selenium demo & PDF launcher
-├── run-demo.ps1                  # Live demo execution & teardown script
 ├── CONTRIBUTING.md               # Contribution and pull request guidelines
 ├── CODE_OF_CONDUCT.md            # Contributor Covenant Code of Conduct
 ├── LICENSE                       # MIT Open Source License

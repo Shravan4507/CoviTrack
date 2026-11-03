@@ -80,3 +80,4 @@ We use conventional commit messages:
 2. Verify all builds pass (`npm run build`).
 3. Verify all automated tests pass (`npm run test:automation`).
 4. Submit your pull request with a descriptive summary of changes and testing evidence.
+
