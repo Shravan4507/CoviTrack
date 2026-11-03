@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CoviTrack Test Automation Suite" verbose="1">
+    <listeners>
+        <listener class-name="com.covitrack.listeners.TestExecutionListener" />
+    </listeners>
+
+    <test name="Regular Expression Validation Tests">
+        <classes>
+            <class name="com.covitrack.tests.validation.RegexValidationTests" />
+        </classes>
+    </test>
+
+    <test name="Registration Workflow Tests">
+        <classes>
+            <class name="com.covitrack.tests.registration.RegistrationTests" />
+        </classes>
+    </test>
+
+    <test name="Authentication Workflow Tests">
+        <classes>
+            <class name="com.covitrack.tests.authentication.AuthenticationTests" />
+        </classes>
+    </test>
+
+    <test name="Appointment Scheduling & Management Tests">
+        <classes>
+            <class name="com.covitrack.tests.appointments.AppointmentTests" />
+        </classes>
+    </test>
+
+    <test name="Patient Management Tests">
+        <classes>
+            <class name="com.covitrack.tests.patient.PatientManagementTests" />
+        </classes>
+    </test>
+
+    <test name="Diagnostic Report Tests">
+        <classes>
+            <class name="com.covitrack.tests.reports.DiagnosticReportTests" />
+        </classes>
+    </test>
+</suite>
+

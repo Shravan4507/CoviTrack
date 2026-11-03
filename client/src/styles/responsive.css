@@ -1,0 +1,40 @@
+/* ==============================================================================
+   CoviTrack Responsive Styles
+   ============================================================================== */
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: var(--space-3);
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-3);
+  }
+
+  .app-header {
+    height: auto;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table th, .table td {
+    padding: var(--space-2);
+    font-size: var(--font-size-xs);
+  }
+
+  .card {
+    padding: var(--space-4);
+  }
+
+  .modal-content {
+    padding: var(--space-4);
+  }
+}
+

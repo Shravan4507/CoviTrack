@@ -1,0 +1,40 @@
+{
+  "name": "covitrack-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CoviTrack Express & TypeScript Backend API",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "nodemon --watch src -e ts --exec ts-node src/server.ts",
+    "build": "rimraf dist && tsc",
+    "start": "node dist/server.js",
+    "db:migrate": "ts-node src/scripts/migrate.ts",
+    "seed:admin": "ts-node src/scripts/create-admin.ts",
+    "seed:slots": "ts-node src/scripts/seed-slot.ts",
+    "report:qa": "ts-node src/scripts/generate-qa-report-pdf.ts"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.7",
+    "pdfkit": "^0.15.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.12.7",
+    "@types/pdfkit": "^0.13.4",
+    "nodemon": "^3.1.0",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
+
