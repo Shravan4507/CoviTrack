@@ -28,17 +28,23 @@ async function tryConnect(port: number, user = 'root', password = ''): Promise<b
 }
 
 function updateEnvFile(port: number) {
+  const examplePath = path.resolve(__dirname, '../../.env.example');
   let content = '';
+
   if (fs.existsSync(envPath)) {
     content = fs.readFileSync(envPath, 'utf8');
-    if (content.includes('DB_PORT=')) {
-      content = content.replace(/DB_PORT=\d+/g, `DB_PORT=${port}`);
-    } else {
-      content += `\nDB_PORT=${port}\n`;
-    }
+  } else if (fs.existsSync(examplePath)) {
+    content = fs.readFileSync(examplePath, 'utf8');
   } else {
-    content = `PORT=5000\nNODE_ENV=development\nDB_HOST=127.0.0.1\nDB_PORT=${port}\nDB_USER=root\nDB_PASSWORD=\nDB_NAME=covitrack\n`;
+    content = `PORT=5000\nNODE_ENV=development\nDB_HOST=127.0.0.1\nDB_PORT=3306\nDB_USER=root\nDB_PASSWORD=\nDB_NAME=covitrack\n`;
   }
+
+  if (content.includes('DB_PORT=')) {
+    content = content.replace(/DB_PORT=\d+/g, `DB_PORT=${port}`);
+  } else {
+    content += `\nDB_PORT=${port}\n`;
+  }
+
   fs.writeFileSync(envPath, content, 'utf8');
 }
 
@@ -98,3 +104,4 @@ setupDatabase().catch((err) => {
   console.error(`[DB Setup Fatal] ${err.message}`);
   process.exit(1);
 });
+

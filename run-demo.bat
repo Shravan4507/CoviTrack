@@ -1,7 +1,9 @@
 <# :
 @echo off
-title CoviTrack - One-Click Live Automation Demonstration and Report Generator
+set "SCRIPT_DIR=%~dp0"
+set "SCRIPT_DIR=%SCRIPT_DIR:~0,-1%"
 cd /d "%~dp0"
+title CoviTrack - One-Click Live Automation Demonstration and Report Generator
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-Expression (Get-Content -Raw '%~f0')"
 exit /b %ERRORLEVEL%
 #>
@@ -12,7 +14,7 @@ Write-Host "====================================================================
 Write-Host "     COVITRACK: LIVE AUTOMATED DEMONSTRATION AND REPORT GENERATOR    " -ForegroundColor White
 Write-Host "=====================================================================" -ForegroundColor Cyan
 
-$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$ScriptDir = if ($env:SCRIPT_DIR) { $env:SCRIPT_DIR } else { (Get-Location).Path }
 Set-Location $ScriptDir
 
 # 1. Ensure Maven is Available (or Auto-Provision Portable Maven)
